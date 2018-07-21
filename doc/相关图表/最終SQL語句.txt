@@ -1,0 +1,32 @@
+create database OrderDinnerSystemDatabase //創建訂餐系統數據庫表
+
+
+create table addressList (addressId char(20),address char(100), primary key(addressId))
+create table manager (userName char(20),passward int ,primary key(userName))
+create table orderInfo (orderId int, caiping int,fenshu int ,primary key(order , caiping))
+create table youHui (shangJiaId int, manJianJiaGe float,youHuiJiaGe float ,kaiShiShiJian datatime, jieShuShiJian datatime,primary key(shangJiaId , manJianJiaGe))
+create table shangJiaList (shangJiaId int ,shangPingMing char(20),passward int,tongYiSheHuiXingYongDaiMa int,shiPingWeiShengXuKeBianHao int,tuPian char(20),jianJie char(20),youXiaoQi datatiem,address char(100),kaiShiYeShiJian datatime,jieShuYingYeShiJian datatime,primary key(shangJiaId))
+create table orderPhone (userID int, phone char(11), primary key(userID, phone))
+create table userInfoList (userID int, idCheck int, addressID char(20), primary key(userID))
+create table orderList (orderID int, userID int, addressID char(20), phone char(11), shanghuID int, orderTime datetime, zonge float, songcanFlag int, primary key(orderID))
+create table caipingList (caipingID int, caipingName char(20), primary key(caipingId))
+create table caidanList (caipingID int, shanghuID int, saleNumber int, chapingNumber int, jiage float, youhujiage float, primary key(caipingID, shanghuID) )
+create table yongliaoList (caipingID int, yuliaoID int, youliang float, primary key(caipingID, yuliaoID))
+create table yuanliao (yuanliaoID int, yuanliaoName char(20), primary key(yuanliaoID))
+
+
+insert into addressList (1,黑大)
+insert into manager (张三,1 )
+insert into orderInfo (1, 麻辣烫,1)
+insert into youHui (1, 10,5 ,2017年1月1日6:30, 2017年1月6日6:30)
+insert into shangJiaList (1 ,麻辣烫,1,1,1,麻辣烫图,好吃,2017年1月6日6:30,黑大A食堂,2017年1月1日7:30,017年1月1日22:30)
+insert into orderPhone (1,11111111111)
+insert into userInfoList (1,1,’黑大’)
+insert into orderList (1,1,’黑大’,11111111111,1,’2018年3月25日’，100，1)
+insert into caipingList(1,‘麻辣燙’)
+insert into caidanList (1,1，25，20，13.5，2.5)
+insert into yongliaoList (1,1，2.5)
+insert into yongliaoList (1,1，‘白菜’)
+
+
+
